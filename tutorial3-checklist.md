@@ -1,0 +1,54 @@
+# Tutorial 3 Checklist - Mastering Claude AI
+
+Use this as a real execution tracker for the final-project repo.
+
+## Phase 1 - Module Completion and Evidence
+
+- [ ] Finish RAG with Claude module.
+- [ ] Write 3 notes: retrieval pattern, project fit, one limitation.
+- [ ] Save screenshot: evidence/tutorial-3-screenshots/rag-progress.png.
+
+- [ ] Finish MCP Integration module.
+- [ ] Write 3 notes: tool boundary pattern, project fit, one limitation.
+- [ ] Save screenshot: evidence/tutorial-3-screenshots/mcp-progress.png.
+
+- [ ] Finish Agent SDK module.
+- [ ] Document 2 agent patterns to use (planner and reviewer).
+- [ ] Save screenshot: evidence/tutorial-3-screenshots/agent-sdk-progress.png.
+
+## Phase 2 - Architecture Proposal
+
+- [x] Create architecture.md.
+- [ ] Ensure proposal is about one page.
+- [ ] Confirm diagram is present and readable.
+- [ ] Confirm at least 2 patterns are explained (RAG and MCP minimum).
+- [ ] Confirm each pattern includes fit, connection points, and one risk.
+- [ ] Commit architecture artifacts.
+
+Suggested commit:
+- docs: complete tutorial 3 architecture proposal
+
+## Phase 3 - Proof of Concept
+
+- [ ] Build one working component from architecture (retrieval-backed planner).
+- [ ] Keep scope narrow: one command, one output format, one test set.
+- [x] Create poc-notes.md.
+- [ ] Fill POC notes with actual run evidence and outcomes.
+- [ ] Commit POC code and notes.
+
+Suggested commits:
+- test: add failing tests for retrieval planner
+- feat: implement retrieval planner to satisfy tests
+- docs: finalize poc notes with evidence
+
+## Phase 4 - Submission Readiness
+
+- [ ] Verify required files exist: architecture.md and poc-notes.md.
+- [ ] Verify screenshot evidence exists for all 3 modules.
+- [ ] Push final-project repo to GitHub.
+- [ ] Submit repo link via Gradescope.
+
+## Optional Stretch
+
+- [ ] Finish full specialization and add certificate screenshot.
+- [ ] Add multi-agent orchestration demo (planner, executor, reviewer).

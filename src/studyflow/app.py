@@ -191,6 +191,14 @@ def home() -> str:
               font-size: 1.05rem;
             }
 
+            .meta-row {
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              gap: 0.45rem;
+              margin-bottom: 0.7rem;
+            }
+
             ol, ul {
               margin: 0;
               padding-left: 1.1rem;
@@ -204,11 +212,25 @@ def home() -> str:
               font-size: 0.74rem;
               padding: 0.24rem 0.5rem;
               border-radius: 999px;
-              margin-bottom: 0.5rem;
+            }
+
+            .confidence-pill {
+              background: #e9eef7;
+              color: #294569;
             }
 
             .ok { background: #d9f0df; color: var(--ok); }
             .bad { background: #f8dada; color: var(--bad); }
+
+            .warning {
+              border: 1px solid #efb7a7;
+              background: #fff1ec;
+              color: #8a3524;
+              border-radius: 12px;
+              padding: 0.55rem 0.7rem;
+              font-size: 0.86rem;
+              margin-bottom: 0.75rem;
+            }
 
             .hide { display: none; }
 
@@ -249,7 +271,11 @@ def home() -> str:
 
               <article class="card output">
                 <h2>Plan Output</h2>
-                <div id="review-pill" class="pill hide"></div>
+                <div class="meta-row">
+                  <div id="review-pill" class="pill hide"></div>
+                  <div id="confidence-pill" class="pill confidence-pill hide"></div>
+                </div>
+                <div id="context-warning" class="warning hide"></div>
                 <ol id="plan-items"></ol>
 
                 <h2 style="margin-top: 1rem;">Citations</h2>
@@ -270,6 +296,8 @@ def home() -> str:
             const citeEl = document.getElementById("citation-items");
             const issueEl = document.getElementById("issue-items");
             const pillEl = document.getElementById("review-pill");
+            const confidenceEl = document.getElementById("confidence-pill");
+            const warningEl = document.getElementById("context-warning");
 
             function renderList(target, values) {
               target.innerHTML = "";
@@ -327,6 +355,16 @@ def home() -> str:
                 }
 
                 const confidencePct = Math.round((data.confidence || 0) * 100);
+                confidenceEl.classList.remove("hide");
+                confidenceEl.textContent = `Confidence: ${confidencePct}%`;
+
+                warningEl.classList.add("hide");
+                warningEl.textContent = "";
+                if (data.weak_context) {
+                  warningEl.classList.remove("hide");
+                  warningEl.textContent = "Weak context detected. Add richer or more specific docs to improve guidance quality.";
+                }
+
                 statusEl.textContent = data.weak_context
                   ? `Completed with weak context (${confidencePct}% confidence).`
                   : `Completed with solid context (${confidencePct}% confidence).`;

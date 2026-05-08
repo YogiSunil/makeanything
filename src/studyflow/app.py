@@ -331,9 +331,9 @@ def home() -> str:
             function buildPlanExport(data) {
               const checklist = data.checklist
                 .map((item, idx) => `${idx + 1}. ${item}`)
-                .join("\n");
+                .join("\\n");
               const citations = data.citations.length
-                ? data.citations.map(src => `- ${src}`).join("\n")
+                ? data.citations.map(src => `- ${src}`).join("\\n")
                 : "- None";
               return [
                 "StudyFlow Plan",
@@ -343,7 +343,7 @@ def home() -> str:
                 "",
                 "Citations:",
                 citations,
-              ].join("\n");
+              ].join("\\n");
             }
 
             async function copyPlan() {
@@ -409,7 +409,7 @@ def home() -> str:
             async function runPlanner() {
               const prompt = promptEl.value.trim();
               const docs = docsEl.value
-                .split("\n")
+                .split("\\n")
                 .map(line => line.trim())
                 .filter(Boolean);
 

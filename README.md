@@ -66,6 +66,14 @@ If retrieval confidence is low, the pipeline returns a safe fallback response in
 
 ![Mastering Claude AI Certificate](evidence/screenshots/certificate.png)
 
+### StudyFlow Web UI - Idle State
+
+![StudyFlow Web UI Idle State](evidence/screenshots/image.png)
+
+### StudyFlow Web UI - Generated Plan State
+
+![StudyFlow Web UI Generated Plan State](evidence/screenshots/image1.png)
+
 ## Current Status
 
 - Completed: proposal.md, architecture.md, poc-notes.md, checklist setup, and Tutorial 3 screenshot evidence.

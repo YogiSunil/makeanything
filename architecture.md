@@ -44,6 +44,8 @@ flowchart TD
         RV --> UI
 ```
 
+> **MVP implementation scope.** The current code in `src/studyflow/` implements the CLI Assistant (`cli.py`), Planner (`planner.py`), Retriever (`retriever.py`), and Reviewer (`reviewer.py`), wired together by an orchestrator (`orchestrator.py`). The MCP Tool Router (`T → C7 / BR`) and standalone Executor Agent (`E`) are intentionally deferred — they remain optional extension points (see `poc-notes.md` §2 and `tutorial3-checklist.md` "Optional Stretch") so the core flow stays runnable offline.
+
 ## 5. Pattern Details
 
 ### Pattern A: RAG

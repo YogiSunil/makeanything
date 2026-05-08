@@ -31,7 +31,7 @@ Evidence:
 
 - [x] Iterative refinement
 Evidence:
-- `CHANGELOG.md` documents three concrete iterations with rationale and outcomes.
+- `CHANGELOG.md` documents four concrete iterations (scaffolding → architecture/POC consolidation → rubric alignment → implementation MVP) with rationale and outcomes.
 
 ## Current Count
 

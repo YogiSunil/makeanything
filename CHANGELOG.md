@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-05-08 - Iteration 4 (Implementation MVP)
+
+What changed:
+- Added Python package skeleton (`pyproject.toml`, `src/studyflow/`).
+- Implemented retriever, planner, reviewer, orchestrator, and CLI end-to-end with explicit red→green commit pairs per module.
+- Added test suite covering retrieval, planning, reviewer rules, orchestrator flow, and CLI smoke (9 tests passing).
+- Synced `poc-notes.md`, `README.md`, `makeanything.md`, and `tutorial3-checklist.md` with real run output and module-based CLI command.
+
+Why:
+- Move beyond documentation-only deliverables so success criteria can be verified by running `pytest -q` and the CLI demo, not just by reading prose.
+
+Result:
+- POC satisfies QG-1 (≥5-task checklist), QG-2 (citations + fallback), and the makeanything test-first rubric item with auditable git history.
+
 ## 2026-05-08 - Iteration 3 (Rubric Alignment)
 
 What changed:

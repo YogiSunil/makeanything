@@ -3,3 +3,6 @@ __pycache__/
 .pytest_cache/
 .venv/
 .env
+
+# Personal planning scratchpads — kept local, not graded artifacts
+FINAL_EXECUTION_PLAN.md

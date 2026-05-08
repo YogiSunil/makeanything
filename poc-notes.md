@@ -22,17 +22,21 @@
 
 ## 3. Test-First Evidence
 
-- Tests written before implementation:
-	- returns checklist format with numbered actions
-	- includes at least one source citation when context exists
-	- returns safe fallback on empty context
-- Initial failing behavior:
-	- planner returned generic advice without citations
-	- empty-context case raised an exception
-- Implementation changes that made tests pass:
-	- added citation requirement in planner formatter
-	- added empty-context guard and fallback response
-	- improved retriever relevance scoring with keyword weighting
+Each feature module landed via a red→green pair: a failing-test commit immediately before the implementing-feature commit. Verifiable in `git log`:
+
+- Retriever
+	- red: `c9f9420 test: add failing retriever relevance and empty-context tests` — asserts top-1 source for a relevant query and empty list when no terms overlap.
+	- green: `ac63bb1 feat: implement retriever scoring for relevant context retrieval`.
+	- follow-up: `edb0013 test: add failing retriever test for non-positive top_k` → `9335006 handle non-positive top_k in retriever`.
+- Planner
+	- red: `5c6a777 add failing planner tests for checklist citations and fallback` — asserts ≥5 checklist items, citations populated when retrieval is non-empty, and `used_fallback=True` when retrieval is empty.
+	- green: `fdbf6c2 implement planner with checklist citations and fallback output`.
+- Reviewer + orchestrator
+	- red: `226fac9 add failing reviewer and orchestrator flow tests` — asserts reviewer flags missing citations when `used_fallback=False`, and `run_pipeline` returns a reviewed plan with ≥5 items.
+	- green: `196fb02 implement reviewer rules and orchestrator pipeline`.
+- CLI
+	- red: `be2b515 add failing cli integration test for plan and review output` — asserts `main()` exits 0 and prints both "StudyFlow Plan" and "Review" headers.
+	- green: `aa5a491 implement cli entrypoint for planning and review output`.
 
 ## 4. What Worked
 

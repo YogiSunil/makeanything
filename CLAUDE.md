@@ -19,7 +19,7 @@ These files are tightly coupled — edits to one usually require edits to the ot
 - `tutorial3-checklist.md` — the live execution tracker. Tick checkboxes here as work completes; this is the file used to judge submission readiness.
 - `makeanything.md` — rubric tracker for 7 required workflow items (project memory, spec with teeth, test-first, complexity awareness, protocol integration, scoped rules, iterative refinement). Update the checkbox + evidence link any time an item's evidence changes.
 - `CHANGELOG.md` — the *iterative refinement* evidence. Append a new dated section (What changed / Why / Result) at the top whenever a meaningful iteration completes; this file is what proves the rubric item, so don't squash entries.
-- `evidence/tutorial-3-screenshots/` — required screenshots with **fixed filenames**: `rag-progress.png`, `mcp-progress.png`, `agent-sdk-progress.png` (plus optional `certificate.png`). Do not rename these — graders look for these exact names.
+- `evidence/screenshots/` — required screenshots with **fixed filenames**: `rag-progress.png`, `mcp-progress.png`, `agent-sdk-progress.png` (plus optional `certificate.png`). Do not rename these — graders look for these exact names.
 
 ## POC Scope Constraint
 
@@ -31,11 +31,18 @@ These files are tightly coupled — edits to one usually require edits to the ot
 
 ## Commit Style
 
-Follow the suggested commit sequence in `README.md` and the per-phase suggestions in `tutorial3-checklist.md`. Conventional-commit prefixes are used: `docs:`, `feat:`, `test:`. Test commits should land before the corresponding `feat:` commit (test-first cycle).
+Conventional-commit prefixes (`docs:`, `feat:`, `test:`, `chore:`) were used for the early scaffolding and retriever commits. The implementation phase (planner → reviewer → CLI) dropped the prefix — see `git log`. New commits should re-adopt the prefix where reasonable. Always land a `test:` commit with a failing assertion before the matching `feat:` commit (test-first cycle).
 
-## What is Missing
+## How to Run
 
-There is intentionally no `package.json`, `requirements.txt`, lint config, or test framework yet. If you add a POC, pick the lightest tooling that satisfies the test-first requirement and document the run command in `poc-notes.md` §7 ("Demo command/run steps") rather than inventing scripts the grader cannot find.
+The POC is a Python package — `pyproject.toml` declares runtime deps (`fastapi`, `uvicorn`) and dev deps (`pytest`, `httpx`), and sets `pythonpath = ["src"]` so pytest finds the package without env setup.
+
+- **Tests (any shell):** `pytest -q` — current baseline is **11 passed** (retriever, planner, reviewer/orchestrator flow, CLI smoke, web smoke).
+- **CLI demo, PowerShell:** `$env:PYTHONPATH="src"; python -m studyflow.cli "Plan my final project" --docs "proposal.md::Build retrieval planner||spec.md::Return at least 5 tasks"`
+- **CLI demo, bash:** `PYTHONPATH=src python -m studyflow.cli "Plan my final project" --docs "..."`
+- **Web UI (FastAPI + uvicorn):** `$env:PYTHONPATH="src"; python -m uvicorn studyflow.app:app --reload` — serves a single-page studio at http://127.0.0.1:8000 (`GET /`) backed by `POST /api/plan`. Both routes are exercised by `tests/test_web.py`.
+
+The CLI's `--docs` flag uses `source::text` entries separated by `||`; the web UI accepts the same `source::text` format, one per line. The reviewer rejects plans with <5 tasks or missing citations (when `used_fallback=False`).
 
 ## Cross-File Update Reflex
 

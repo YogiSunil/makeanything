@@ -22,3 +22,14 @@ def test_retrieve_returns_empty_when_no_match():
     results = retrieve("mcp rag agent", docs, top_k=3)
 
     assert results == []
+
+
+def test_retrieve_returns_empty_for_non_positive_top_k():
+    docs = {
+        "a.md": "architecture proposal and planning",
+        "b.md": "architecture review and planning notes",
+    }
+
+    results = retrieve("architecture planning", docs, top_k=-1)
+
+    assert results == []

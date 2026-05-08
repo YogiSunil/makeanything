@@ -165,6 +165,13 @@ def home() -> str:
               gap: 0.7rem;
             }
 
+            .sample-actions {
+              margin-top: 0.75rem;
+              display: flex;
+              flex-wrap: wrap;
+              gap: 0.45rem;
+            }
+
             button {
               border: 0;
               border-radius: 12px;
@@ -178,6 +185,12 @@ def home() -> str:
 
             button:hover { filter: brightness(1.06); }
             button:disabled { opacity: 0.7; cursor: wait; }
+
+            .sample-btn {
+              padding: 0.45rem 0.65rem;
+              font-size: 0.82rem;
+              background: #2f5d8c;
+            }
 
             .status {
               font-family: var(--mono);
@@ -263,6 +276,11 @@ def home() -> str:
                 <textarea id="docs" rows="7" placeholder="proposal.md::Build retrieval planner and collect evidence\nspec.md::Return at least 5 tasks with fallback"></textarea>
                 <div class="hint">One line per source in source::text format.</div>
 
+                <div class="sample-actions">
+                  <button id="sample-final" class="sample-btn" type="button">Load Final Project Sample</button>
+                  <button id="sample-exam" class="sample-btn" type="button">Load Exam Week Sample</button>
+                </div>
+
                 <div class="actions">
                   <button id="run">Generate Plan</button>
                   <span id="status" class="status">Ready.</span>
@@ -298,6 +316,29 @@ def home() -> str:
             const pillEl = document.getElementById("review-pill");
             const confidenceEl = document.getElementById("confidence-pill");
             const warningEl = document.getElementById("context-warning");
+            const sampleFinalBtn = document.getElementById("sample-final");
+            const sampleExamBtn = document.getElementById("sample-exam");
+
+            function loadSample(type) {
+              if (type === "final") {
+                promptEl.value = "Plan my final AI engineering project submission this week.";
+                docsEl.value = [
+                  "proposal.md::Build one retrieval-backed component and capture proof of concept notes.",
+                  "spec.md::Return at least 5 tasks with fallback when context is weak.",
+                  "tutorial3-checklist.md::Confirm architecture.md and poc-notes.md are complete before submission."
+                ].join("\\n");
+                statusEl.textContent = "Loaded final project sample.";
+                return;
+              }
+
+              promptEl.value = "Help me plan exam week study and assignment deadlines.";
+              docsEl.value = [
+                "schedule.md::Math exam Tuesday, systems quiz Thursday, project report Friday.",
+                "rubric.md::Include at least one review checkpoint and risk note per deliverable.",
+                "notes.md::Prefer two focused work blocks daily and one nightly recap."
+              ].join("\\n");
+              statusEl.textContent = "Loaded exam week sample.";
+            }
 
             function renderList(target, values) {
               target.innerHTML = "";
@@ -376,6 +417,8 @@ def home() -> str:
             }
 
             runBtn.addEventListener("click", runPlanner);
+            sampleFinalBtn.addEventListener("click", () => loadSample("final"));
+            sampleExamBtn.addEventListener("click", () => loadSample("exam"));
           </script>
         </body>
         </html>

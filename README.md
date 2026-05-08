@@ -75,6 +75,12 @@ pytest -q
 
 Latest observed test result: 9 passed.
 
+## MCP in This Build
+
+- Design role: MCP is represented as the executor/tool path in the architecture (`Context7` + browser verification).
+- Development role: live-doc and verification decisions were validated during implementation workflow and captured in companion evidence under the wiredup project.
+- MVP behavior: current CLI keeps local retrieval-first execution and leaves MCP calls as an optional extension path, which keeps the core flow stable even when external tools are unavailable.
+
 ## Suggested Commit Sequence
 
 1. `docs: add tutorial 3 checklist and architecture draft`

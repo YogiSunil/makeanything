@@ -64,6 +64,10 @@ Observed result summary:
 	- CLI produced a structured 5-step checklist and passed reviewer validation.
 	- Test suite currently reports 9 passing tests.
 
+MCP decision log:
+	- Confirmed API response-shape assumptions through live documentation workflow before finalizing field mapping strategy.
+	- Kept MCP as an optional executor path in the MVP so planning remains deterministic when external tools are unavailable.
+
 ## 8. Next Steps
 
 - Immediate next task: Connect planner output to milestone tracking for day-by-day execution.

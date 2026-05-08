@@ -57,7 +57,7 @@
 - Screenshot/log reference 2: test run output showing `9 passed`.
 - Demo command/run steps:
 	- set `PYTHONPATH=src`
-	- run: `python -c "from studyflow.cli import main; main(['Plan my final project','--docs','proposal.md::Build retrieval planner and capture evidence||spec.md::Return at least 5 tasks with fallback'])"`
+	- run: `python -m studyflow.cli "Plan my final project" --docs "proposal.md::Build retrieval planner and capture evidence||spec.md::Return at least 5 tasks with fallback"`
 	- run: `pytest -q`
 
 Observed result summary:

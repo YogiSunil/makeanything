@@ -64,7 +64,7 @@ Implementation boundaries:
 Run planner flow (current scaffold command):
 
 ```bash
-PYTHONPATH=src python -c "from studyflow.cli import main; main(['Plan my final project','--docs','proposal.md::Build retrieval planner and capture evidence||spec.md::Return at least 5 tasks with fallback'])"
+PYTHONPATH=src python -m studyflow.cli "Plan my final project" --docs "proposal.md::Build retrieval planner and capture evidence||spec.md::Return at least 5 tasks with fallback"
 ```
 
 Run tests:

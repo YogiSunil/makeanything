@@ -12,9 +12,10 @@ Evidence:
 Evidence:
 - `spec.md` includes quality gates and Given/When/Then acceptance criteria.
 
-- [ ] Test-first
+- [x] Test-first
 Evidence:
-- Planned in `poc-notes.md` section 3; strict red-then-green commit history still to be finalized.
+- Implemented with explicit red-then-green commits for retriever, planner, reviewer/flow, and CLI tests.
+- Evidence captured in `poc-notes.md` sections 3 and 6, with matching test files under `tests/`.
 
 - [x] Complexity awareness
 Evidence:
@@ -34,10 +35,10 @@ Evidence:
 
 ## Current Count
 
-- Completed: 6/7
-- Pending: finalize explicit test-first commit sequence for any additional POC code changes.
+- Completed: 7/7
+- Pending: none.
 
 ## Submission Notes
 
 - Tutorial 3 screenshots are complete in `evidence/screenshots/`.
-- Next objective: finalize explicit test-first commit sequence with code/tests in this repo.
+- Workflow requirements tracker is complete for this repo.

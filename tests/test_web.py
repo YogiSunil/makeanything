@@ -31,3 +31,5 @@ def test_api_plan_returns_valid_payload():
     assert len(payload["checklist"]) >= 5
     assert "is_valid" in payload
     assert "used_fallback" in payload
+    assert "confidence" in payload
+    assert "weak_context" in payload

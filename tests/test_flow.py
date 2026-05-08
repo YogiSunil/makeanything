@@ -50,3 +50,16 @@ def test_orchestrator_returns_reviewed_plan():
 
     assert len(result.plan.checklist) >= 5
     assert result.review.is_valid is True
+    assert 0.0 <= result.confidence <= 1.0
+
+
+def test_orchestrator_marks_weak_context_when_no_matches():
+    docs = {
+        "assignment.md": "unrelated tokens that do not overlap with the query"
+    }
+
+    result = run_pipeline("graph traversal theorem", docs)
+
+    assert result.plan.used_fallback is True
+    assert result.weak_context is True
+    assert result.confidence == 0.0

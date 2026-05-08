@@ -20,6 +20,8 @@ class PlanResponse(BaseModel):
     checklist: list[str]
     citations: list[str]
     used_fallback: bool
+    confidence: float
+    weak_context: bool
     is_valid: bool
     issues: list[str]
 
@@ -324,9 +326,10 @@ def home() -> str:
                   pillEl.textContent = "Review: Needs fixes";
                 }
 
-                statusEl.textContent = data.used_fallback
-                  ? "Completed with fallback guidance."
-                  : "Completed with retrieval context.";
+                const confidencePct = Math.round((data.confidence || 0) * 100);
+                statusEl.textContent = data.weak_context
+                  ? `Completed with weak context (${confidencePct}% confidence).`
+                  : `Completed with solid context (${confidencePct}% confidence).`;
               } catch (err) {
                 statusEl.textContent = "Pipeline failed. Try again.";
               } finally {
@@ -350,6 +353,8 @@ def api_plan(payload: PlanRequest) -> PlanResponse:
         checklist=result.plan.checklist,
         citations=result.plan.citations,
         used_fallback=result.plan.used_fallback,
+      confidence=result.confidence,
+      weak_context=result.weak_context,
         is_valid=result.review.is_valid,
         issues=result.review.issues,
     )

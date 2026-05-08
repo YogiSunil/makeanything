@@ -31,3 +31,12 @@ def retrieve(query: str, docs: dict[str, str], top_k: int = 3) -> list[Retrieved
 
     matches.sort(key=lambda item: item.score, reverse=True)
     return matches[:top_k]
+
+
+def confidence_for(query: str, retrieved: list[RetrievedResult]) -> float:
+    query_tokens = _tokenize(query)
+    if not query_tokens or not retrieved:
+        return 0.0
+
+    top_score = max(item.score for item in retrieved)
+    return min(1.0, top_score / len(query_tokens))

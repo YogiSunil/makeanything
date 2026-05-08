@@ -16,6 +16,9 @@ def _tokenize(value: str) -> set[str]:
 
 
 def retrieve(query: str, docs: dict[str, str], top_k: int = 3) -> list[RetrievedResult]:
+    if top_k <= 0:
+        return []
+
     query_tokens = _tokenize(query)
     if not query_tokens:
         return []

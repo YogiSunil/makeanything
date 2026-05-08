@@ -107,6 +107,31 @@ Run tests (any shell — `pyproject.toml` already sets pytest's `pythonpath = ["
 pytest -q
 ```
 
+## Web Demo (Submission Quick Check)
+
+1. Start the app:
+
+```powershell
+$env:PYTHONPATH = "src"; C:/Python314/python.exe -m uvicorn studyflow.app:app --reload
+```
+
+2. Open:
+
+- http://127.0.0.1:8000
+
+3. In the UI, use either sample button:
+
+- Load Final Project Sample
+- Load Exam Week Sample
+
+4. Click Generate Plan and verify:
+
+- review badge appears (`Valid` or `Needs fixes`)
+- confidence badge appears (percentage)
+- weak-context warning appears when retrieval is weak
+
+5. Click Copy Plan to copy checklist + citations for submission-ready notes.
+
 Run web UI:
 
 ```bash
@@ -117,7 +142,7 @@ Then open:
 
 - http://127.0.0.1:8000
 
-Latest observed test result: 9 passed.
+Latest observed test result: 12 passed.
 
 ## MCP in This Build
 

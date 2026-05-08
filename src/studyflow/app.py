@@ -192,6 +192,12 @@ def home() -> str:
               background: #2f5d8c;
             }
 
+            .copy-btn {
+              padding: 0.45rem 0.65rem;
+              font-size: 0.82rem;
+              background: #266651;
+            }
+
             .status {
               font-family: var(--mono);
               font-size: 0.85rem;
@@ -292,6 +298,7 @@ def home() -> str:
                 <div class="meta-row">
                   <div id="review-pill" class="pill hide"></div>
                   <div id="confidence-pill" class="pill confidence-pill hide"></div>
+                  <button id="copy-plan" class="copy-btn" type="button">Copy Plan</button>
                 </div>
                 <div id="context-warning" class="warning hide"></div>
                 <ol id="plan-items"></ol>
@@ -316,8 +323,52 @@ def home() -> str:
             const pillEl = document.getElementById("review-pill");
             const confidenceEl = document.getElementById("confidence-pill");
             const warningEl = document.getElementById("context-warning");
+            const copyPlanBtn = document.getElementById("copy-plan");
             const sampleFinalBtn = document.getElementById("sample-final");
             const sampleExamBtn = document.getElementById("sample-exam");
+            let latestPlanData = null;
+
+            function buildPlanExport(data) {
+              const checklist = data.checklist
+                .map((item, idx) => `${idx + 1}. ${item}`)
+                .join("\n");
+              const citations = data.citations.length
+                ? data.citations.map(src => `- ${src}`).join("\n")
+                : "- None";
+              return [
+                "StudyFlow Plan",
+                "",
+                "Checklist:",
+                checklist,
+                "",
+                "Citations:",
+                citations,
+              ].join("\n");
+            }
+
+            async function copyPlan() {
+              if (!latestPlanData) {
+                statusEl.textContent = "Generate a plan first, then copy it.";
+                return;
+              }
+
+              const text = buildPlanExport(latestPlanData);
+              try {
+                await navigator.clipboard.writeText(text);
+                statusEl.textContent = "Copied plan and citations to clipboard.";
+              } catch (err) {
+                const fallback = document.createElement("textarea");
+                fallback.value = text;
+                fallback.setAttribute("readonly", "");
+                fallback.style.position = "absolute";
+                fallback.style.left = "-9999px";
+                document.body.appendChild(fallback);
+                fallback.select();
+                document.execCommand("copy");
+                document.body.removeChild(fallback);
+                statusEl.textContent = "Copied plan and citations to clipboard.";
+              }
+            }
 
             function loadSample(type) {
               if (type === "final") {
@@ -382,6 +433,7 @@ def home() -> str:
                 }
 
                 const data = await res.json();
+                latestPlanData = data;
                 renderList(planEl, data.checklist);
                 renderList(citeEl, data.citations);
                 renderList(issueEl, data.issues);
@@ -417,6 +469,7 @@ def home() -> str:
             }
 
             runBtn.addEventListener("click", runPlanner);
+            copyPlanBtn.addEventListener("click", copyPlan);
             sampleFinalBtn.addEventListener("click", () => loadSample("final"));
             sampleExamBtn.addEventListener("click", () => loadSample("exam"));
           </script>

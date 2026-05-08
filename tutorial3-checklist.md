@@ -53,12 +53,12 @@ Suggested commits:
 - [x] Finish full specialization and add certificate screenshot.
 - [ ] Add multi-agent orchestration demo (planner, executor, reviewer).
 
-## Implementation Commit Queue (Next)
+## Implementation Commit Queue (Completed)
 
-- [ ] Add minimal Python scaffold (`pyproject.toml`, package folder, tests folder).
-- [ ] Add failing retriever tests (relevance + empty context).
-- [ ] Implement retriever to pass tests.
-- [ ] Add failing planner tests (5 tasks + citations + fallback).
-- [ ] Implement planner to pass tests.
-- [ ] Add failing reviewer/flow tests.
-- [ ] Implement reviewer and CLI end-to-end flow.
+- [x] Add minimal Python scaffold (`pyproject.toml`, package folder, tests folder).
+- [x] Add failing retriever tests (relevance + empty context).
+- [x] Implement retriever to pass tests.
+- [x] Add failing planner tests (5 tasks + citations + fallback).
+- [x] Implement planner to pass tests.
+- [x] Add failing reviewer/flow tests.
+- [x] Implement reviewer and CLI end-to-end flow.

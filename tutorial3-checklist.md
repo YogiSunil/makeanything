@@ -4,17 +4,17 @@ Use this as a real execution tracker for the final-project repo.
 
 ## Phase 1 - Module Completion and Evidence
 
-- [ ] Finish RAG with Claude module.
-- [ ] Write 3 notes: retrieval pattern, project fit, one limitation.
-- [ ] Save screenshot: evidence/tutorial-3-screenshots/rag-progress.png.
+- [x] Finish RAG with Claude module.
+- [x] Write 3 notes: retrieval pattern, project fit, one limitation.
+- [x] Save screenshot: evidence/tutorial-3-screenshots/rag-progress.png.
 
-- [ ] Finish MCP Integration module.
-- [ ] Write 3 notes: tool boundary pattern, project fit, one limitation.
-- [ ] Save screenshot: evidence/tutorial-3-screenshots/mcp-progress.png.
+- [x] Finish MCP Integration module.
+- [x] Write 3 notes: tool boundary pattern, project fit, one limitation.
+- [x] Save screenshot: evidence/tutorial-3-screenshots/mcp-progress.png.
 
-- [ ] Finish Agent SDK module.
-- [ ] Document 2 agent patterns to use (planner and reviewer).
-- [ ] Save screenshot: evidence/tutorial-3-screenshots/agent-sdk-progress.png.
+- [x] Finish Agent SDK module.
+- [x] Document 2 agent patterns to use (planner and reviewer).
+- [x] Save screenshot: evidence/tutorial-3-screenshots/agent-sdk-progress.png.
 
 ## Phase 2 - Architecture Proposal
 
@@ -44,11 +44,11 @@ Suggested commits:
 ## Phase 4 - Submission Readiness
 
 - [x] Verify required files exist: architecture.md and poc-notes.md.
-- [ ] Verify screenshot evidence exists for all 3 modules.
+- [x] Verify screenshot evidence exists for all 3 modules.
 - [x] Push final-project repo to GitHub.
 - [ ] Submit repo link via Gradescope.
 
 ## Optional Stretch
 
-- [ ] Finish full specialization and add certificate screenshot.
+- [x] Finish full specialization and add certificate screenshot.
 - [ ] Add multi-agent orchestration demo (planner, executor, reviewer).

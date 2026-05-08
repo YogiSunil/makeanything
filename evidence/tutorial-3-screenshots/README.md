@@ -11,3 +11,10 @@ Required images:
 Optional:
 
 - `certificate.png` if you complete the full specialization certificate.
+
+Current files present:
+
+- rag-progress.png
+- mcp-progress.png
+- agent-sdk-progress.png
+- certificate.png

@@ -4,10 +4,10 @@ This repository contains the final project deliverables and implementation work.
 
 ## Tutorial 3 Deliverables
 
-- [ ] Complete required module: RAG with Claude
-- [ ] Complete required module: MCP Integration
-- [ ] Complete required module: Agent SDK
-- [ ] Capture screenshot evidence for each required module
+- [x] Complete required module: RAG with Claude
+- [x] Complete required module: MCP Integration
+- [x] Complete required module: Agent SDK
+- [x] Capture screenshot evidence for each required module
 - [x] Write architecture proposal in architecture.md
 - [x] Build one proof of concept component
 - [x] Document proof of concept in poc-notes.md
@@ -22,8 +22,8 @@ This repository contains the final project deliverables and implementation work.
 
 ## Current Status
 
-- Completed: proposal.md, architecture.md, poc-notes.md, and checklist setup.
-- Remaining: add 3 Tutorial 3 module screenshots and mark final checklist completion.
+- Completed: proposal.md, architecture.md, poc-notes.md, checklist setup, and Tutorial 3 screenshot evidence.
+- Remaining: submit final GitHub link via Gradescope.
 
 ## Suggested Commit Sequence
 

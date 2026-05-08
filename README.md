@@ -89,17 +89,33 @@ Implementation boundaries:
 
 ## Run and Verify
 
-Run planner flow (current scaffold command):
+Run planner flow on bash / WSL / macOS:
 
 ```bash
 PYTHONPATH=src python -m studyflow.cli "Plan my final project" --docs "proposal.md::Build retrieval planner and capture evidence||spec.md::Return at least 5 tasks with fallback"
 ```
 
-Run tests:
+Run planner flow on Windows PowerShell:
+
+```powershell
+$env:PYTHONPATH = "src"; python -m studyflow.cli "Plan my final project" --docs "proposal.md::Build retrieval planner and capture evidence||spec.md::Return at least 5 tasks with fallback"
+```
+
+Run tests (any shell — `pyproject.toml` already sets pytest's `pythonpath = ["src"]`):
 
 ```bash
 pytest -q
 ```
+
+Run web UI:
+
+```bash
+PYTHONPATH=src C:/Python314/python.exe -m uvicorn studyflow.app:app --reload
+```
+
+Then open:
+
+- http://127.0.0.1:8000
 
 Latest observed test result: 9 passed.
 

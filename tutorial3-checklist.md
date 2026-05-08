@@ -19,22 +19,22 @@ Use this as a real execution tracker for the final-project repo.
 ## Phase 2 - Architecture Proposal
 
 - [x] Create architecture.md.
-- [ ] Ensure proposal is about one page.
-- [ ] Confirm diagram is present and readable.
-- [ ] Confirm at least 2 patterns are explained (RAG and MCP minimum).
-- [ ] Confirm each pattern includes fit, connection points, and one risk.
-- [ ] Commit architecture artifacts.
+- [x] Ensure proposal is about one page.
+- [x] Confirm diagram is present and readable.
+- [x] Confirm at least 2 patterns are explained (RAG and MCP minimum).
+- [x] Confirm each pattern includes fit, connection points, and one risk.
+- [x] Commit architecture artifacts.
 
 Suggested commit:
 - docs: complete tutorial 3 architecture proposal
 
 ## Phase 3 - Proof of Concept
 
-- [ ] Build one working component from architecture (retrieval-backed planner).
-- [ ] Keep scope narrow: one command, one output format, one test set.
+- [x] Build one working component from architecture (retrieval-backed planner).
+- [x] Keep scope narrow: one command, one output format, one test set.
 - [x] Create poc-notes.md.
-- [ ] Fill POC notes with actual run evidence and outcomes.
-- [ ] Commit POC code and notes.
+- [x] Fill POC notes with actual run evidence and outcomes.
+- [x] Commit POC code and notes.
 
 Suggested commits:
 - test: add failing tests for retrieval planner
@@ -43,9 +43,9 @@ Suggested commits:
 
 ## Phase 4 - Submission Readiness
 
-- [ ] Verify required files exist: architecture.md and poc-notes.md.
+- [x] Verify required files exist: architecture.md and poc-notes.md.
 - [ ] Verify screenshot evidence exists for all 3 modules.
-- [ ] Push final-project repo to GitHub.
+- [x] Push final-project repo to GitHub.
 - [ ] Submit repo link via Gradescope.
 
 ## Optional Stretch

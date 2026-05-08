@@ -53,12 +53,17 @@
 
 ## 7. Evidence
 
-- Screenshot/log reference 1: terminal run showing prompt, checklist output, and citations.
-- Screenshot/log reference 2: failing-to-passing test run showing red/green cycle.
+- Screenshot/log reference 1: terminal run showing prompt, checklist output, and citations (pending final capture).
+- Screenshot/log reference 2: failing-to-passing test run showing red/green cycle (pending final capture).
 - Demo command/run steps:
 	- run tests
 	- run planner command with a Tutorial 3 prompt
 	- run planner command with a Wiredup prompt
+
+Suggested evidence filenames:
+	- evidence/tutorial-3-screenshots/rag-progress.png
+	- evidence/tutorial-3-screenshots/mcp-progress.png
+	- evidence/tutorial-3-screenshots/agent-sdk-progress.png
 
 ## 8. Next Steps
 

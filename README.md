@@ -20,7 +20,7 @@ This repository contains the final project deliverables and implementation work.
 - poc-notes.md: Brief proof-of-concept report
 - evidence/screenshots/: Screenshot evidence
 
-## Tutorial 3 Evidence Screenshots
+## Certification and Module Evidence Screenshots
 
 ### RAG Module (100%)
 
@@ -42,6 +42,22 @@ This repository contains the final project deliverables and implementation work.
 
 - Completed: proposal.md, architecture.md, poc-notes.md, checklist setup, and Tutorial 3 screenshot evidence.
 - Remaining: submit final GitHub link via Gradescope.
+
+## MVP Contract (Locked)
+
+Input:
+- One assignment prompt from the user.
+
+Output:
+- At least 5 actionable checklist steps.
+- Source citations to local markdown context.
+- At least one risk note.
+- Fallback response when context is weak.
+
+Implementation boundaries:
+- One CLI command for end-to-end planning flow.
+- One output format for consistency and testability.
+- One test suite proving retrieval, planning, and fallback behavior.
 
 ## Suggested Commit Sequence
 

@@ -31,6 +31,22 @@ The project reduces missed deliverables, improves planning quality, and creates 
 - Checklist generation with completion states.
 - Risk and evidence prompts tied to rubric language.
 
+## MVP Input and Output Contract
+
+Input:
+- A single assignment prompt provided by the user.
+
+Output:
+- A structured checklist with at least 5 concrete tasks.
+- Citations to relevant local context sources.
+- One or more implementation risks.
+- A safe fallback response when context quality is low.
+
+MVP boundaries:
+- Single CLI entrypoint.
+- Single output format.
+- Single test suite covering retrieval, planning, and fallback.
+
 ## Architecture Direction
 
 The project will use:

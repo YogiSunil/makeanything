@@ -2,6 +2,34 @@
 
 This repository contains the final project deliverables and implementation work.
 
+## What This Project Is About
+
+StudyFlow Coach is a small AI-assisted planning tool for school assignments.
+It takes one assignment prompt and turns it into a practical checklist that is:
+
+- specific and actionable
+- grounded in local project documents
+- transparent through source citations
+- safe with fallback behavior when context is weak
+
+The project demonstrates three Tutorial 3 patterns in one MVP:
+
+- RAG-style retrieval from local markdown notes
+- MCP-aware architecture for optional external tool execution
+- Agent-style pipeline roles (planner plus reviewer)
+
+## How It Works
+
+The current MVP runs as a command-line pipeline:
+
+1. You provide a prompt and local context documents.
+2. The retriever ranks the most relevant text chunks from those documents.
+3. The planner generates at least 5 checklist steps with citations.
+4. The reviewer validates structure and flags any quality issues.
+5. The CLI prints the final plan and review result.
+
+If retrieval confidence is low, the pipeline returns a safe fallback response instead of low-quality guidance.
+
 ## Tutorial 3 Deliverables
 
 - [x] Complete required module: RAG with Claude

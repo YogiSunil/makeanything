@@ -76,27 +76,44 @@ flowchart TD
 5. Reviewer checks output against rubric items and missing requirements.
 6. System returns final checklist, timeline, and evidence suggestions.
 
-## 7. Risks and Constraints
+## 7. Concrete MVP Modules
+
+The first implementation will use four modules only:
+
+- `retriever`: load local markdown docs, split into chunks, and return top-k relevant chunks.
+- `planner`: generate a minimum 5-step checklist and attach citations.
+- `reviewer`: validate plan quality (actionability, coverage, fallback correctness).
+- `cli`: single command entrypoint that runs retriever -> planner -> reviewer.
+
+MVP command contract:
+- Input: one prompt string.
+- Output: checklist + citations + risk notes + fallback guidance when context is weak.
+
+MCP usage in MVP:
+- Optional verification/tool step through executor path.
+- If unavailable, planner flow still succeeds with local retrieval.
+
+## 8. Risks and Constraints
 
 - Risk 1: Hallucinated API usage when live docs are unavailable.
 - Risk 2: Over-scoped plans that are hard to finish before deadlines.
 - Constraint 1: Project must remain demoable on a local machine with minimal setup.
 
-## 8. Validation Plan
+## 9. Validation Plan
 
 - Unit tests:
-    - requirement extraction logic
-    - checklist state transitions
-    - source citation formatting
+    - retriever relevance ranking and empty-context behavior
+    - planner checklist length and citation presence
+    - reviewer validation and fallback checks
 - Integration tests:
-    - retriever plus planner output generation
-    - MCP tool call success and fallback behavior
+    - cli end-to-end flow (retriever -> planner -> reviewer)
+    - optional MCP call path with graceful fallback
 - Manual demo checklist:
     - one Tutorial 3 prompt run
     - one Wiredup prompt run
     - one hallucination comparison scenario
 
-## 9. Milestones
+## 10. Milestones
 
 - Milestone 1: Complete module notes and screenshot evidence.
 - Milestone 2: Finish architecture proposal and diagram.

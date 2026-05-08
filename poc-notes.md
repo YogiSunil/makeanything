@@ -53,17 +53,16 @@
 
 ## 7. Evidence
 
-- Screenshot/log reference 1: terminal run showing prompt, checklist output, and citations (pending final capture).
-- Screenshot/log reference 2: failing-to-passing test run showing red/green cycle (pending final capture).
+- Screenshot/log reference 1: CLI run output showing a 5-step plan and review status `Valid: True`.
+- Screenshot/log reference 2: test run output showing `9 passed`.
 - Demo command/run steps:
-	- run tests
-	- run planner command with a Tutorial 3 prompt
-	- run planner command with a Wiredup prompt
+	- set `PYTHONPATH=src`
+	- run: `python -c "from studyflow.cli import main; main(['Plan my final project','--docs','proposal.md::Build retrieval planner and capture evidence||spec.md::Return at least 5 tasks with fallback'])"`
+	- run: `pytest -q`
 
-Suggested evidence filenames:
-	- evidence/tutorial-3-screenshots/rag-progress.png
-	- evidence/tutorial-3-screenshots/mcp-progress.png
-	- evidence/tutorial-3-screenshots/agent-sdk-progress.png
+Observed result summary:
+	- CLI produced a structured 5-step checklist and passed reviewer validation.
+	- Test suite currently reports 9 passing tests.
 
 ## 8. Next Steps
 

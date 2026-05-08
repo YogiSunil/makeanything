@@ -59,6 +59,22 @@ Implementation boundaries:
 - One output format for consistency and testability.
 - One test suite proving retrieval, planning, and fallback behavior.
 
+## Run and Verify
+
+Run planner flow (current scaffold command):
+
+```bash
+PYTHONPATH=src python -c "from studyflow.cli import main; main(['Plan my final project','--docs','proposal.md::Build retrieval planner and capture evidence||spec.md::Return at least 5 tasks with fallback'])"
+```
+
+Run tests:
+
+```bash
+pytest -q
+```
+
+Latest observed test result: 9 passed.
+
 ## Suggested Commit Sequence
 
 1. `docs: add tutorial 3 checklist and architecture draft`

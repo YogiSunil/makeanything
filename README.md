@@ -18,7 +18,25 @@ This repository contains the final project deliverables and implementation work.
 - tutorial3-checklist.md: Step-by-step checklist for Tutorial 3
 - architecture.md: One-page architecture proposal with system diagram
 - poc-notes.md: Brief proof-of-concept report
-- evidence/tutorial-3-screenshots/: Screenshot evidence placeholders
+- evidence/screenshots/: Screenshot evidence
+
+## Tutorial 3 Evidence Screenshots
+
+### RAG Module (100%)
+
+![RAG Module Progress](evidence/screenshots/rag-progress.png)
+
+### MCP Integration Module (100%)
+
+![MCP Module Progress](evidence/screenshots/mcp-progress.png)
+
+### Agent SDK / End Course Module (100%)
+
+![Agent SDK Module Progress](evidence/screenshots/agent-sdk-progress.png)
+
+### Specialization Certificate
+
+![Mastering Claude AI Certificate](evidence/screenshots/certificate.png)
 
 ## Current Status
 

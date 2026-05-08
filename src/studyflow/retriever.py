@@ -39,4 +39,5 @@ def confidence_for(query: str, retrieved: list[RetrievedResult]) -> float:
         return 0.0
 
     top_score = max(item.score for item in retrieved)
-    return min(1.0, top_score / len(query_tokens))
+    normalization_tokens = min(len(query_tokens), 5)
+    return min(1.0, top_score / normalization_tokens)

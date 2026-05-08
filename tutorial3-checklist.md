@@ -6,15 +6,15 @@ Use this as a real execution tracker for the final-project repo.
 
 - [x] Finish RAG with Claude module.
 - [x] Write 3 notes: retrieval pattern, project fit, one limitation.
-- [x] Save screenshot: evidence/tutorial-3-screenshots/rag-progress.png.
+- [x] Save screenshot: evidence/screenshots/rag-progress.png.
 
 - [x] Finish MCP Integration module.
 - [x] Write 3 notes: tool boundary pattern, project fit, one limitation.
-- [x] Save screenshot: evidence/tutorial-3-screenshots/mcp-progress.png.
+- [x] Save screenshot: evidence/screenshots/mcp-progress.png.
 
 - [x] Finish Agent SDK module.
 - [x] Document 2 agent patterns to use (planner and reviewer).
-- [x] Save screenshot: evidence/tutorial-3-screenshots/agent-sdk-progress.png.
+- [x] Save screenshot: evidence/screenshots/agent-sdk-progress.png.
 
 ## Phase 2 - Architecture Proposal
 
@@ -52,3 +52,13 @@ Suggested commits:
 
 - [x] Finish full specialization and add certificate screenshot.
 - [ ] Add multi-agent orchestration demo (planner, executor, reviewer).
+
+## Implementation Commit Queue (Next)
+
+- [ ] Add minimal Python scaffold (`pyproject.toml`, package folder, tests folder).
+- [ ] Add failing retriever tests (relevance + empty context).
+- [ ] Implement retriever to pass tests.
+- [ ] Add failing planner tests (5 tasks + citations + fallback).
+- [ ] Implement planner to pass tests.
+- [ ] Add failing reviewer/flow tests.
+- [ ] Implement reviewer and CLI end-to-end flow.

@@ -39,5 +39,5 @@ Evidence:
 
 ## Submission Notes
 
-- Required Tutorial 3 screenshots still pending in `evidence/tutorial-3-screenshots/`.
-- Once screenshots are added, update this tracker and README status if needed.
+- Tutorial 3 screenshots are complete in `evidence/screenshots/`.
+- Next objective: finalize explicit test-first commit sequence with code/tests in this repo.
